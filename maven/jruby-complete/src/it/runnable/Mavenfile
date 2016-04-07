@@ -1,13 +1,15 @@
 #-*- mode: ruby -*-
 
 # default versions will be overwritten by pom.rb from root directory
-properties( 'jruby.plugins.version' => '1.0.10', 'mavengem.wagon.version' => '0.2.0' )
+properties( 'jruby.plugins.version' => '1.0.10',
+            'mavengem.wagon.version' => '0.2.0',
+            'jruby.version' => '9.0.5.0' )
 
 gemfile
 
-packaging :jrubyJar
+jarfile
 
-properties 'jruby.version' => '9.0.5.0'
+packaging :jrubyJar
 
 resource :includes => ['.rspec', '*.rb', 'config.ru', '*file', '*file.lock', '.jbundler/classpath.rb',
                        'lib/**', 'app/**', 'config/**', 'vendor/**', 'spec/**']
